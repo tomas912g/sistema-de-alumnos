@@ -43,5 +43,9 @@ namespace Sistema_de_Alumnos
                 Nota2 = Nota2 + 1;
             }
         }
+        public override string ToString()
+        {
+            return $"{Legajo} - {Nombre} (promedio: {Promedio()})";
+        }
     }
 }
