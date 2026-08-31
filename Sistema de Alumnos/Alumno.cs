@@ -17,6 +17,31 @@ namespace Sistema_de_Alumnos
             Nota1 = nota1;
             Nota2 = nota2;
         }
-           
+        public decimal Promedio() 
+        { 
+            decimal notaPromedio = (Nota1 + Nota2) / 2; 
+            return notaPromedio; 
+        }
+
+        public bool EstaAprobado() 
+        {
+            decimal notaPromedio = Promedio();
+            if (notaPromedio >= 6) 
+            {
+                return true;
+            }
+            return false;
+        }
+        public void SubirNota() 
+        {
+            if (Nota1 <= 9)
+            {
+                Nota1 = Nota1 + 1;
+            }
+            if (Nota2 <= 9)
+            {
+                Nota2 = Nota2 + 1;
+            }
+        }
     }
 }
