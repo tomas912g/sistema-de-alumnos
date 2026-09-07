@@ -1,8 +1,12 @@
 ﻿using Sistema_de_Alumnos;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-Alumno alumno1 = new Alumno("Augusto", 1, 10m, 3m);
-Alumno alumno2 = new Alumno("Peira", 2, 8m, 7m);
+Alumno alumno1 = new Alumno("Peira", 2);
+
+if (alumno1.CargarNotas(8m, 10m) == false);
+{
+    Console.WriteLine("Error: Ingresar una nota valida.");
+}
 
 Console.WriteLine(alumno1);
 
