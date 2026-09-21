@@ -22,10 +22,13 @@ while (salir == false)
         Console.WriteLine("Ingrese el nombre del alumno: ");
         string nombreAlumno = Console.ReadLine();
 
+        Console.WriteLine("Ingrese el documento del alumno: ");
+        int documentoAlumno = Convert.ToInt32(Console.ReadLine());
+
         Console.WriteLine("Ingrese el legado del alumno: ");
         int legajoAlumno = Convert.ToInt32(Console.ReadLine());
 
-        Alumno alumnoNuevo = new Alumno(nombreAlumno, legajoAlumno);
+        Alumno alumnoNuevo = new Alumno(nombreAlumno,documentoAlumno, legajoAlumno);
         alumnos.Add(alumnoNuevo);
     }
     else if (opcion == "2")
