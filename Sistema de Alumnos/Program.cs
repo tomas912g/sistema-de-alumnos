@@ -4,6 +4,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 List<Alumno> alumnos = new List<Alumno>();
 bool salir = false;
 
+List<Persona> listaMezclada = new List<Persona>();
+
+Alumno alumnoPrueba = new Alumno("Ana Pérez", 912912912, 1234);
+Profesor profesorPrueba = new Profesor("Marta Díaz", 9122018, "Programación");
+Preceptor preceptorPrueba = new Preceptor("Silvia Marquez", 2018912, "segundo año");
+
+listaMezclada.Add(alumnoPrueba);
+listaMezclada.Add(profesorPrueba);
+listaMezclada.Add(preceptorPrueba);
+
+foreach (Persona individuo in listaMezclada)
+{
+    Console.WriteLine(individuo.Presentarse());
+}
+
 while (salir == false)
 {
     Console.WriteLine("\n--- MENÚ PRINCIPAL ---");

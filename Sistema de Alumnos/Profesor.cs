@@ -12,5 +12,9 @@ namespace Sistema_de_Alumnos
         {
             Dicta = dicta;
         }
+        public override string Presentarse() // Error al sacar virtual: no se puede invalidar el miembro heredado
+        {
+            return $"Hola, soy {Nombre} y dicto {Dicta}";
+        }
     }
 }
