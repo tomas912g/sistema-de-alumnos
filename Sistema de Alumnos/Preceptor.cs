@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sistema_de_Alumnos
 {
-    public class Preceptor : Persona
+    public class Preceptor : Persona, IExportable
     {
         public string Año { get; set; }
 
@@ -15,6 +15,10 @@ namespace Sistema_de_Alumnos
         public override string Presentarse()
         {
             return $"Hola, soy {Nombre} y soy preceptor de {Año}";
+        }
+        public string ExportarLinea()
+        {
+            return $"PRECEPTOR;{Nombre};{Año}";
         }
     }
 }

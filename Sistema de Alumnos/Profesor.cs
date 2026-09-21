@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sistema_de_Alumnos
 {
-    public class Profesor : Persona
+    public class Profesor : Persona, IExportable
     {
         public string Dicta {  get; set; }
 
@@ -15,6 +15,10 @@ namespace Sistema_de_Alumnos
         public override string Presentarse() // Error al sacar virtual: no se puede invalidar el miembro heredado
         {
             return $"Hola, soy {Nombre} y dicto {Dicta}";
+        }
+        public string ExportarLinea()
+        {         
+            return $"PROFESOR; {Nombre}; {Dicta}";
         }
     }
 }

@@ -4,19 +4,23 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 List<Alumno> alumnos = new List<Alumno>();
 bool salir = false;
 
-List<Persona> listaMezclada = new List<Persona>();
+List<IExportable> listaParaExportar = new List<IExportable>();
 
 Alumno alumnoPrueba = new Alumno("Ana Pérez", 912912912, 1234);
 Profesor profesorPrueba = new Profesor("Marta Díaz", 9122018, "Programación");
 Preceptor preceptorPrueba = new Preceptor("Silvia Marquez", 2018912, "segundo año");
+Materia materiaPrueba = new Materia("Programacion", 129, 64);
+Materia materiaPrueba1 = new Materia("Derecho", 912, 32);
 
-listaMezclada.Add(alumnoPrueba);
-listaMezclada.Add(profesorPrueba);
-listaMezclada.Add(preceptorPrueba);
+listaParaExportar.Add(alumnoPrueba);
+listaParaExportar.Add(profesorPrueba);
+listaParaExportar.Add(preceptorPrueba);
+listaParaExportar.Add(materiaPrueba);
+listaParaExportar.Add(materiaPrueba1);
 
-foreach (Persona individuo in listaMezclada)
+foreach (IExportable elemento in listaParaExportar)
 {
-    Console.WriteLine(individuo.Presentarse());
+    Console.WriteLine(elemento.ExportarLinea());
 }
 
 while (salir == false)
@@ -114,3 +118,5 @@ while (salir == false)
         Console.WriteLine("Opción inexistente, intente de nuevo.");
     }
 }
+// Al agregar "ExportarEncabezado()" a la interfaz sin ponerlo en las clases,
+// aparece el error CS0535 ("no implementa el miembro de interfaz")
